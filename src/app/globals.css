@@ -1,26 +1,79 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fdfdff;
+  --foreground: #020617;
+  --accent: #6366f1;
+  --accent-foreground: #ffffff;
+  --card: #ffffff;
+  --card-foreground: #020617;
+  --border: #f1f5f9;
+  --muted: #f8fafc;
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.5);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+@theme {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  overflow: hidden;
+  position: relative;
+}
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+}
+
+.glass-dark {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.web3-shadow {
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.04),
+    0 4px 6px -2px rgba(0, 0, 0, 0.02),
+    0 0 0 1px rgba(0, 0, 0, 0.02);
+}
+
+.web3-shadow-lg {
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.05),
+    0 10px 10px -5px rgba(0, 0, 0, 0.02),
+    0 0 0 1px rgba(0, 0, 0, 0.01);
+}
+
+.bg-textured {
+  background-color: transparent;
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.03) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.scroll-smooth::-webkit-scrollbar {
+  width: 5px;
+}
+
+.scroll-smooth::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scroll-smooth::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.1);
+  border-radius: 10px;
+}
+
+.scroll-smooth::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.2);
 }
